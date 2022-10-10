@@ -1,8 +1,9 @@
 import express, { application } from "express";
 import personagens from "../models/Personagens.js"
 import upload from "../middlaware/upload.js";
-import { User } from "../models/User.js";
 import bcrypt from "bcrypt";
+import { User } from "../models/User.js";
+
 
 const rotas = express.Router()
 
@@ -18,24 +19,6 @@ rotas.get('/', async(req, res) => {
     })
 })
 
-
-rotas.post('/addpersonagem', upload.single('foto'), (req, res) => {
-    console.log(req.file)
-    let personagem = new personagens({
-        nome: req.body.nome,
-        funcao: req.body.funcao,
-        foto: process.cwd() + "/public/fotos/" + req.file.filename
-    })
-    console.log(personagem)
-     personagem.save(function(err){
-        if (err){
-            console.log(err)
-        } else {
-            console.log(personagem.toJSON())
-        }
-    })
-    res.send("Champion Cadastrado com sucesso")
-})
 
 //REGISTRO DE USUARIO
 
@@ -83,6 +66,8 @@ rotas.post('/registro', async (req, res) => {
     }
 })
 
+//LOGIN DO USUARIO 
+
 rotas.post('/login', async (req, res) => {
     const {email, senha} = req.body
 
@@ -97,6 +82,27 @@ rotas.post('/login', async (req, res) => {
     }
 
 })
+
+// ADICIONANDO PERSONAGEM
+rotas.post('/addpersonagem', upload.single('foto'), (req, res) => {
+    console.log(req.file)
+    let personagem = new personagens({
+        nome: req.body.nome,
+        funcao: req.body.funcao,
+        foto: process.cwd() + "/public/fotos/" + req.file.filename
+    })
+    console.log(personagem)
+     personagem.save(function(err){
+        if (err){
+            console.log(err)
+        } else {
+            console.log(personagem.toJSON())
+        }
+    })
+    res.send("Personagem Cadastrado com sucesso")
+})
+
+
 export default rotas;
 
 
