@@ -1,14 +1,15 @@
 import express from "express";
 import db from "./src/config/mongoDB.js"
-import rotas from "./src/routes/rotasPersonagens.js"
-
+import rotasPersonagens from "./src/routes/rotasPersonagens.js";
+import rotasUsuarios from "./src/routes/rotasUsuarios.js";
 
 ///CONECTANDO E VALIDANDO O SERVIDOR
 const app = express();
 const port = 3000
 
 app.use(express.json());
-app.use(rotas);
+app.use('/user', rotasUsuarios);
+app.use('/personagens', rotasPersonagens);
 
 app.listen(port, () => {
     console.log(`Servidor escutando na porta ${port}`)
