@@ -1,0 +1,1 @@
+export const SECRET = "AJHSABGVJHSBGFJHDGBFKasuoi12314$@@sssssss"

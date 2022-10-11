@@ -3,11 +3,14 @@ import personagens from "../models/Personagens.js"
 import upload from "../middlaware/upload.js";
 import bcrypt from "bcrypt";
 import { User } from "../models/User.js";
+import jwt from "jsonwebtoken"
+import { SECRET } from "../../secret.js";
+import { checkToken } from "../middlaware/upload.js";
 
 
 const rotas = express.Router()
 
-rotas.get('/', async(req, res) => {
+rotas.get('/personagens', checkToken, async(req, res) => {
     personagens.find((err, personagens) => {
         try{
             res.status(200).send(personagens)
@@ -19,10 +22,26 @@ rotas.get('/', async(req, res) => {
     })
 })
 
+// ROTA PRIVADA DO USUARIO COM LOGIN
+
+rotas.get('/usuario/:id', checkToken, async (req, res) => {
+    const id = req.params.id
+
+    //verificando se usuario existe
+
+    const user = await User.findById(id, '-senha')
+
+    if (!user) {
+        return res.status(404).json({msg: 'usuario não encontrado'})
+    }
+
+    res.status(200).json(user)
+})
+
 
 //REGISTRO DE USUARIO
 
-rotas.post('/registro', async (req, res) => {
+rotas.post('/cadastro', async (req, res) => {
     const {nome, email, senha, confirmesenha} = req.body
 
     //VALIDAÇÕES
@@ -72,19 +91,56 @@ rotas.post('/login', async (req, res) => {
     const {email, senha} = req.body
 
     if (!email){
-        return res.status(422).json({msg: 'Usuario não encontrado'})
+        return res.status(422).json({msg: 'Por favor, digite o E-mail'})
         
     }
 
     if (!senha){
-        return res.status(422).json({msg: 'Senha Incorreta'})
+        return res.status(422).json({msg: 'A senha é obrigatória'})
         
     }
+    
+    //Verificando se o usuario está cadastrado
 
+    const user = await User.findOne({email:email})
+    
+    if (!user) {
+    return res.status(404).json({msg: 'Usuario não encontrado'})
+        
+        }
+    
+   // verificando senha
+
+   const checkpassword = await bcrypt.compare(senha, user.senha)
+
+   if (!checkpassword){
+    return res.status(422).json({msg: 'Senha incorreta'})
+   }
+   try{
+
+    const secret = SECRET
+    const token = jwt.sign(
+        {
+            id: user._id,
+        },
+        secret,
+        )
+        res.status(200).json({msg: "Login com sucesso", token})
+    
+
+
+   } catch(err){
+    console.log(err)
+    res.status(500).json({msg: "Erro ao fazer o Login"})
+
+   }
+
+   
+    
 })
 
 // ADICIONANDO PERSONAGEM
-rotas.post('/addpersonagem', upload.single('foto'), (req, res) => {
+rotas.post('/addpersonagem', checkToken, upload.single('foto'), (req, res) => {
     console.log(req.file)
     let personagem = new personagens({
         nome: req.body.nome,
