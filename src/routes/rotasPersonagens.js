@@ -4,7 +4,7 @@ import upload from "../middlaware/upload.js";
 import bcrypt from "bcrypt";
 import { User } from "../models/User.js";
 import jwt from "jsonwebtoken"
-import { SECRET } from "../../secret.js";
+import { SECRET } from "../config/secret.js";
 import { checkToken } from "../middlaware/upload.js";
 
 

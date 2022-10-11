@@ -1,5 +1,5 @@
 import multer from "multer";
-import { SECRET } from "../../secret.js";
+import { SECRET } from "../config/secret.js";
 import jwt from "jsonwebtoken"
 
 
