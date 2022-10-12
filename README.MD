@@ -8,4 +8,4 @@ O que podemos fazer nessa API?
 - Podemos nos logar com o usuário cadastrado anteriormente.
 - Após o login conseguimos adicionar personagens de nossa preferencia. (Todos os personagens possuem nome, função dentro do jogo e foto)
 - Conseguimos listar todos os personagens que já foram cadastrados por determinado usuário. 
-- Todos os métodos após o Login, são validos por JWT(TOKEN).
+- Todos os métodos após o Login, são validados por JWT(TOKEN).
