@@ -1,10 +1,6 @@
 import express, { application, response } from "express";
 import personagens from "../models/Personagens.js"
 import upload from "../middlaware/upload.js";
-import bcrypt from "bcrypt";
-import { User } from "../models/User.js";
-import jwt from "jsonwebtoken"
-import { SECRET } from "../config/secret.js";
 import { checkToken } from "../middlaware/upload.js";
 
 
@@ -31,8 +27,9 @@ rotasPersonagens.post('/adicionar/:id', checkToken, upload.single('foto'), async
         idusuario: id,
         nome: req.body.nome,
         funcao: req.body.funcao,
-        foto: process.cwd() + "/public/fotos/" + req.file.filename,
+        foto: process.cwd() + "/public/fotos/" + req.file.filename
     })
+
     console.log(personagem)
      personagem.save(function(err){
         if (err){
