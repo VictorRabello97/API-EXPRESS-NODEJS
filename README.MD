@@ -1,6 +1,6 @@
 Seja bem vindo a minha primeira API.
 
-- Essa API tem como intuito armazenar seus personagens favoritos do jogo League Of Legends
+- Essa API tem como objetivo armazenar seus personagens favoritos do jogo League Of Legends
 
 O que podemos fazer nessa API?
 
