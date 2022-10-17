@@ -26,7 +26,11 @@ rotasPersonagens.post('/adicionar/:id', checkToken, upload.single('foto'), async
     let personagem = new personagens({
         idusuario: id,
         nome: req.body.nome,
+<<<<<<< HEAD
         tipo: req.body.tipo,
+=======
+        funcao: req.body.funcao,
+>>>>>>> 1eb7d37ecc6e4b37b2f93a807f1b6592ac804362
         foto: process.cwd() + "/public/fotos/" + req.file.filename
     })
 
