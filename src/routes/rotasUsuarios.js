@@ -5,6 +5,7 @@ import { User } from "../models/User.js";
 import { checkToken } from "../middlaware/upload.js";
 import express from "express";
 
+
 const rotasUsuarios = express.Router()
 
 // ROTA PRIVADA DO USUARIO COM LOGIN

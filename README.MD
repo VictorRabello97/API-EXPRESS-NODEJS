@@ -1,11 +1,11 @@
 Seja bem vindo a minha primeira API.
 
-- Essa API tem como intuito armazenar seus personagens favoritos do jogo League Of Legends
+- Essa API tem como intuito armazenar todos os Pokemons capturados dentro do jogo PokemonGO.
 
 O que podemos fazer nessa API?
 
 - Podemos criar Login com nome, email, senha.
 - Podemos nos logar com o usuário cadastrado anteriormente.
-- Após o login conseguimos adicionar personagens de nossa preferencia. (Todos os personagens possuem nome, função dentro do jogo e foto)
-- Conseguimos listar todos os personagens que já foram cadastrados por determinado usuário. 
+- Após o login conseguimos adicionar os Pokemons capturados, podemos colocar nome, tipo do Pokemon, valor e foto.
+- Conseguimos listar todos os Pokemons que já foram cadastrados por determinado usuário. 
 - Todos os métodos após o Login, são validos por JWT(TOKEN).

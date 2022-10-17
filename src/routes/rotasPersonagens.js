@@ -14,7 +14,7 @@ rotasPersonagens.get('/:idusuario', checkToken, async(req, res) => {
     const personagem = await personagens.find({idusuario: id})
 
     if (!personagem){
-        return res.status(404).json({msg: "Nenhum Personagem cadastrado"})
+        return res.status(404).json({msg: "Nenhum Pokemon cadastrado"})
     }
     res.status(200).json(personagem)
 })
@@ -26,7 +26,7 @@ rotasPersonagens.post('/adicionar/:id', checkToken, upload.single('foto'), async
     let personagem = new personagens({
         idusuario: id,
         nome: req.body.nome,
-        funcao: req.body.funcao,
+        tipo: req.body.tipo,
         foto: process.cwd() + "/public/fotos/" + req.file.filename
     })
 
@@ -38,7 +38,7 @@ rotasPersonagens.post('/adicionar/:id', checkToken, upload.single('foto'), async
             console.log(personagem.toJSON())
         }
     })
-    res.send("Personagem Cadastrado com sucesso")
+    res.send("Pokemon Cadastrado com sucesso")
 })
 
 
