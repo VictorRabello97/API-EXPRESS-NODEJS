@@ -3,18 +3,22 @@ import db from "./src/config/mongoDB.js"
 import rotasPersonagens from "./src/routes/rotasPersonagens.js";
 import rotasUsuarios from "./src/routes/rotasUsuarios.js";
 import cors from "cors"
+import http from "http"
+
+
 
 ///CONECTANDO E VALIDANDO O SERVIDOR
 const app = express();
 const port = 3000
 
 app.use(express.json());
+app.use('/public/fotos', express.static('public/fotos'))
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods", 'GET,POST')
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    app.use(cors())
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    app.use(cors({}))
     next()
 })
 

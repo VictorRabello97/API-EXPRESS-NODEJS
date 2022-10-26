@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+    <html lang="br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../AdicionandoPokemon/CSS/addPersonagem.css">
+            <title>API Pokemon</title>
+        </head>
+        <body>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="addPersonagem.js" ></script>
+        
+        <div onclick="listaPersonagens()" id="replace">
+            <button id="botom"> 
+            Acessar Pokemons cadastrados
+            </button>
+         </div>
+
+
+        <div id="box">
+
+            <h2>Cadastre o Pokemon</h2>
+        <form  onsubmit="cadastrar()" enctype="multipart/form-data">
+
+        
+            <input id="nome" name="nome" id="nome" type="text" placeholder="Nome do Pokemon">
+        
+    
+
+    
+            <select class="elementoPreco" name="tipo" id="tipo">
+
+                <option value="opção">Selecione o Elemento do Pokemon</option>
+                <option value="Agua">ÁGUA</option>
+                <option value="Terra">TERRA</option>
+                <option value="Pedra">PEDRA</option>
+                <option value="Psico">PSICO</option>
+                <option value="Fogo">FOGO</option>
+                <option value="Lutador">LUTADOR</option>
+                <option value="Elétrico">ELÉTRICO</option>
+                <option value="Planta">PLANTA</option>
+        
+
+            </select>
+    
+            <select class="elementoPreco" name="preco" id="preco">
+
+                <option value="Opção">Selecione o Preço do Pokemon</option>
+                <option value="0-8 - 000$">0 - 8.000$</option>
+                <option value="8.000$ - 18.000$">8.000 - 18.000$</option>
+                <option value="18.000$ - 60.000$">18.000 - 60.000$</option>
+                <option value="60.000$ - 120.000$">60.000 - 120.000$</option>
+                <option value="120.000$ - 1.000.000$">120.000 - 1.000.0000$</option>
+
+        
+
+            </select>
+            
+        
+            <div>
+                <label for="foto">Enviar Foto</label required>
+                <input type="file" name="foto" id="foto" >
+            </div>
+
+            <div>
+                <button id="botao" type="submit" > Cadastrar Pokemon </button> 
+            </div>
+      
+
+
+
+
+        </form>
+
+    </body>
+</html>
+        
+     

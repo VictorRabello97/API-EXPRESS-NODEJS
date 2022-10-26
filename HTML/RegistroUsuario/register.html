@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../RegistroUsuario/CSS/registro.css">
+        
+        
+        <title>API Pokemon</title>
+    </head>
+    <body>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="register.js" ></script>
+
+        <form class="login">
+        
+
+            <h1>CADASTRO</h1>
+        
+            <div class="box-user">
+                <input  placeholder="Nome Completo" name="nome" id="nome" type="text">
+            
+
+            </div>
+
+            <div class="box-user">
+                <input placeholder="Digite seu E-mail"  name="email" id="email" type="text" >
+        
+            </div>
+            
+            <div class="box-user">
+                <input placeholder="Digite sua Senha"  name="senha" id="senha" type="password">
+            
+            </div>
+        
+            <div class="box-user">
+                <input placeholder="Confirme sua Senha" name="confirmeSenha" id="confirmeSenha" type="password" >
+        
+            </div>
+
+            <div onsubmit="registerUser()">
+                <button onclick="registerUser()" type="submit" > Criar Conta </button> 
+            </div>
+        </form>
+          
+
+    </body>
+</html>

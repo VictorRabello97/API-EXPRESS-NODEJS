@@ -5,8 +5,9 @@ import jwt from "jsonwebtoken"
 
 var storage = multer.diskStorage({
     filename: function(req, file, cb){
-        let nome = Date.now()+ "-" + req.body.nome +".jpg"
-        console.log('ARQUIVO', file, req.body)
+        req.body.foto = Date.now()+ "-" + req.body.nome +".jpg"
+        let nome = req.body.foto
+        //console.log('ARQUIVO', file, req.body)
         cb(null, nome)
     },
     destination: function (req, file, cb) {
@@ -34,7 +35,7 @@ export function checkToken (req, res, next){
         next()
 
     } catch(error) {
-        res.status(400).json({msg: "Token inválido"})
+        res.status(400).json({msg: "Sessão Expirada"})
 
     }
 

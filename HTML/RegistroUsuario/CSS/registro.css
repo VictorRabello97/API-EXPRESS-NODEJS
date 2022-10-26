@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=News+Cycle&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin-right: 750px;
+    background: center;
+    background-image: url('../CSS/banner.png');
+    background-size: cover;
+    
+    
+    
+}
+
+.login{
+    background: linear-gradient(to left, rgb(7, 7, 7), #0b69d4);
+    border-radius: 10px;
+    width: 400px;
+    padding: 40px;
+    
+}
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+}
+
+.login h1{
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+    
+}
+
+
+.login .box-user{
+    position: relative;
+}
+
+.login .box-user input{
+    width: 100%;
+    padding: 15px 0;
+    outline: none;
+    background: transparent;
+    margin-bottom: 30px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 15px;
+
+}
+
+input::placeholder{
+    color: white;
+    font-size: 20px;
+}
+
+input{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+button{
+    width: 100%;
+    font-size: 25px;
+    background: linear-gradient(to right, hsl(71, 98%, 47%), hsl(212, 85%, 62%));
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+
+}
+

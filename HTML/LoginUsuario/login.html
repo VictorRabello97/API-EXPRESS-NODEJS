@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../LoginUsuario/CSS/login.css">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+        <script src="login.js" ></script>
+
+    <div id="login">
+        <h1>Login</h1>
+        <form onsubmit="login()">
+        
+        
+            <input email="email" id="email" type="text" placeholder="E-mail" required oninvalid="this.setCustomValidity('Por favor, digite o seu E-mail')">
+            
+            <input senha="senha" id="senha" type="password" placeholder="Senha" required oninvalid="this.setCustomValidity('Por favor, digite a sua senha')">
+            
+            <input type="submit" value="Entrar">
+
+            <button onclick="replace()">Ainda não possui conta? Clique aqui para criar! </button>
+    
+        </form>
+    </div>
+    
+        
+
+    
+
+
+</body>
+</html>

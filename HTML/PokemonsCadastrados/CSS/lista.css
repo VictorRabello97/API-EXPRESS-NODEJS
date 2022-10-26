@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap');
+
+
+
+body{
+    background: linear-gradient(to right, #0c0c0c, hsl(214, 7%, 40%));
+
+}
+
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-size: cover;
+    width: 100%;
+    height: 640px;
+    background: center;
+    align-items: center;
+    background-image: url('../CSS/banner1.jpg');
+
+
+}
+
+#botao{
+    position: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 20px;
+    margin-left: 450px ;
+    margin-top: 15px;
+    color: antiquewhite;
+    border-radius: 10px;
+    background: linear-gradient(to right, #fd2904, #0b69d4);
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#cadastrados{
+font-size: 40px;
+color: aliceblue;
+text-align: center;
+font-family: 'Press Start 2P', cursive;
+margin-top: 20px;
+margin-bottom: 20px;
+
+}
+
+
+#pokemon{
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(to right, #0c0c0c, hsl(214, 7%, 40%));
+
+}
+
+
+#poke{
+    background-color: transparent;
+    display: inline-block;
+    height: 380px;
+    border-radius: 20px;
+    border: 2.5px outset rgb(103, 219, 248);
+    border-image-slice: 1;
+    margin: 10px;
+    border-radius: 20px;
+    background: hsla(0, 0%, 3%, 0.4);
+
+
+}
+
+
+
+div{
+    box-sizing: border-box;
+    
+}
+
+#name{
+    font-size:45px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    color: antiquewhite;
+
+}
+
+
+#poke img{
+    display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     margin: 10px;
+    border-radius: 30px;
+    max-width:200px;
+    max-height:450px;
+    width: auto;
+    height: auto;
+
+
+
+}
+
+
+
+#type{
+    display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     font-family: 'Cormorant Garamond', serif;
+     padding: 5px;
+     color: antiquewhite;
+     font-weight: bold;
+     font-size: 25px;
+    
+
+}
+
+#poke preço{
+    display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: center;
+     font-family: 'Cormorant Garamond', serif;
+     font-weight: bold;
+     padding: 5px;
+     font-size:25px;
+     color: antiquewhite;
+
+}
+
+
+

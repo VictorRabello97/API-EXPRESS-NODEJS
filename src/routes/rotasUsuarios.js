@@ -32,16 +32,16 @@ rotasUsuarios.post('/cadastro', async (req, res) => {
 
     //VALIDAÇÕES
     if (!nome){
-        return res.status(422).json({msg: 'Campo obrigatório'})
+        return res.status(422).json({msg: 'O Nome obrigatório'})
 
     }
     if (!email){
-        return res.status(422).json({msg: 'Campo obrigatório'})
+        return res.status(422).json({msg: 'O Email obrigatório'})
         
     }
 
     if (!senha){
-        return res.status(422).json({msg: 'Campo obrigatório'})
+        return res.status(422).json({msg: 'A Senha obrigatória'})
         
     }
 
@@ -66,7 +66,7 @@ rotasUsuarios.post('/cadastro', async (req, res) => {
 
     } catch(error){
         console.log(error)
-        res.status(500).json({msg: 'Erro'})
+        res.status(500).json({msg: 'Erro ao criar o usuario'})
         
     }
 })
@@ -77,12 +77,12 @@ rotasUsuarios.post('/login', async (req, res) => {
     const {email, senha} = req.body
 
     if (!email){
-        return res.status(422).json({msg: 'Por favor, digite o E-mail'})
+        return res.status(401).json({msg: 'Por favor, digite o E-mail'})
         
     }
 
     if (!senha){
-        return res.status(422).json({msg: 'A senha é obrigatória'})
+        return res.status(401).json({msg: 'A senha é obrigatória'})
         
     }
     
@@ -91,7 +91,7 @@ rotasUsuarios.post('/login', async (req, res) => {
     const user = await User.findOne({email:email})
     
     if (!user) {
-    return res.status(404).json({msg: 'Usuario não encontrado'})
+    return res.status(401).json({msg: 'Usuario não encontrado'})
         
         }
     
@@ -100,7 +100,7 @@ rotasUsuarios.post('/login', async (req, res) => {
    const checkpassword = await bcrypt.compare(senha, user.senha)
 
    if (!checkpassword){
-    return res.status(422).json({msg: 'Senha incorreta'})
+    return res.status(401).json({msg: 'Senha incorreta'})
    }
    try{
 
@@ -110,8 +110,11 @@ rotasUsuarios.post('/login', async (req, res) => {
             id: user._id,
         },
         secret,
+        {expiresIn: 40000}
         )
-        res.status(200).json({msg: "Login com sucesso", token})
+        console.log(user._id)
+        res.status(200).json({msg: "Login com sucesso", token, id: user._id})
+
     
 
 

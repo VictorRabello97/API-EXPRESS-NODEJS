@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=News+Cycle&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: center;
+    background-size: cover;
+    background-image: url('../CSS/banner5.png');
+
+}
+#replace{
+    position: absolute;
+    font-size: 25px;
+    color: black;
+    width: 300px;
+    height: 20px;
+    margin-bottom: 800px;
+    padding: 20px;
+
+}
+
+#botom{
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    border-radius: 25px;
+    background: linear-gradient(to left, hsl(0, 0%, 95%), rgb(105, 99, 99));
+    font-size: 20px;
+    color: hwb(0 4% 96%);
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+#box{
+    background: linear-gradient(to right, hsl(0, 0%, 0%), hsl(180, 1%, 37%));
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+    color: aliceblue;
+}
+
+
+form{
+    padding: 20px;
+}
+
+
+
+#nome{
+width: 100%;
+}
+
+#nome::placeholder{
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+#nome, select{
+padding: 10px;
+margin-top: 15px;
+margin-bottom: 10px;
+outline: none;
+border-bottom: 2px solid hwb(184 12% 0%);
+border-radius: 10px;
+font-size: 15px;
+background: transparent;
+color: white;
+font-weight: bold;
+}
+
+nome::placeholder{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    font: 15px;
+    font-weight: bold;
+}
+
+option{
+    background: #3d3c3c;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+
+
+.elementoPreco{
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    font-size: 15px;
+    background: transparent;
+}
+
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 20px 10px;
+    width: 320px;
+    background: linear-gradient(to right, #030303, rgb(58, 57, 57));
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: 'Press Start 2P', cursive;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+
+
+#botao{
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    background: black;
+    border-radius: 7px;
+    background: linear-gradient(to right, hsl(56, 63%, 57%), hsl(0, 0%, 0%));
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    border-bottom: hsl(172, 100%, 50%);
+    border-radius: 15px;
+}
+
+input[type="file"] {
+    display: none;
+}
+

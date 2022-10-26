@@ -23,12 +23,16 @@ rotasPersonagens.get('/:idusuario', checkToken, async(req, res) => {
 // ADICIONANDO PERSONAGEM
 rotasPersonagens.post('/adicionar/:id', checkToken, upload.single('foto'), async (req, res) => {
     const id = req.params.id
+    
     let personagem = new personagens({
         idusuario: id,
         nome: req.body.nome,
         tipo: req.body.tipo,
-        foto: process.cwd() + "/public/fotos/" + req.file.filename
+        preco: req.body.preco,
+        foto: req.body.foto
     })
+
+    
 
     console.log(personagem)
      personagem.save(function(err){

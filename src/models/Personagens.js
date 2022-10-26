@@ -11,5 +11,5 @@ const personagemSchema = new mongoose.Schema(
 
     })
 
-    const personagens = mongoose.model('Champions', personagemSchema)
+    const personagens = mongoose.model('Pokemons', personagemSchema)
     export default personagens;

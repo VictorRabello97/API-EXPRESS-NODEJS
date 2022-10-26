@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=News+Cycle&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 115vh;
+    background: center;
+    background-image: url('../CSS/banner2.jpg');
+    background-size: cover;
+    
+ }
+
+#login{
+    position: relative;
+    width: 400px;
+    background: linear-gradient(to right, hsl(0, 0%, 9%), rgb(103, 107, 107));
+    padding: 70px;
+    border-radius: 10px;
+}
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 30px;
+    color: bisque;
+    width: 100%;
+    
+}
+
+#img{
+    position: flex;
+    align-items:initial;
+    justify-content: left;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+
+
+input::placeholder{
+    font-size: 20px;
+    color: white;
+}
+
+input{
+    padding: 20px;
+    outline: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+  
+}
+
+input[type="submit"]{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 15px;
+    background: linear-gradient(to right, hsl(0, 79%, 45%), #f38787);
+    cursor: pointer;
+}
+
+button{
+    font-family: 'Ubuntu', sans-serif;
+    background: transparent;
+    font-size: 15px;
+    color: white;
+    margin-top: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+}
